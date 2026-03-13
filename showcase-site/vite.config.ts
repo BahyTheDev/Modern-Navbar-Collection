@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.html'], // tell vite to treat html in public/src as assets if needed
-  base: './', // relative paths for github pages
+  base: '/Modern-Navbar-Collection/', // relative paths for github pages
 })
