@@ -88,5 +88,17 @@ export const navbars = [
     name: 'Neumorphism Navbar',
     dir: 'neumorphism-navbar',
     description: 'Soft UI design utilizing light and shadow.'
+  },
+  {
+    id: 'social-media-navbar',
+    name: 'Social Media Navbar',
+    dir: 'social-media-navbar',
+    description: 'Navbar with integrated social media links.'
+  },
+  {
+    id: 'search-bar-navbar',
+    name: 'Search Bar Navbar',
+    dir: 'search-bar-navbar',
+    description: 'Navbar that includes a prominent search bar.'
   }
 ];
