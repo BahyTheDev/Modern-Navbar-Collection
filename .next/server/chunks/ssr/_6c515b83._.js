@@ -1,0 +1,3 @@
+module.exports=[70864,a=>{a.n(a.i(33290))},43619,a=>{a.n(a.i(79962))},13718,a=>{a.n(a.i(85523))},18198,a=>{a.n(a.i(45518))},62212,a=>{a.n(a.i(66114))},44584,a=>{"use strict";var b=a.i(7997);function c(){return(0,b.jsxs)("main",{className:"flex-1 container mx-auto px-4 py-8",children:[(0,b.jsx)("h1",{className:"text-2xl font-bold mb-4",children:"Ad-hoc"}),(0,b.jsx)("p",{children:"This is the Ad-hoc page."})]})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=_6c515b83._.js.map
