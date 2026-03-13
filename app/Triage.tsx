@@ -1,42 +1,59 @@
+'use client';
+
+import { useState } from "react";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
+import { triageItems } from "../data/triage-items";
+import TriageItemDetails from "./TriageItemDetails";
 
 export default function Triage() {
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleViewClick = (item) => {
+    setSelectedItem(item);
+    setIsDialogOpen(true);
+  };
+
   return (
-    <div className="flex flex-col h-screen">
-      <header className="border-b">
-        <div className="container mx-auto px-4">
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="#" active>
-                  Triage
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="#">
-                  My Tasks
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink href="#">
-                  Ad-hoc
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-      </header>
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold">Triage</h1>
-        <p>This is the triage page.</p>
-      </main>
-    </div>
+    <main className="flex-1 container mx-auto px-4 py-8">
+      <h1 className="text-2xl font-bold mb-4">Triage</h1>
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead>Priority</TableHead>
+            <TableHead>Title</TableHead>
+            <TableHead>Source</TableHead>
+            <TableHead>Actions</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {triageItems.map((item) => (
+            <TableRow key={item.id}>
+              <TableCell>{item.priority}</TableCell>
+              <TableCell>{item.title}</TableCell>
+              <TableCell>{item.source}</TableCell>
+              <TableCell>
+                <Button variant="outline" onClick={() => handleViewClick(item)}>
+                  View
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+      <TriageItemDetails
+        item={selectedItem}
+        isOpen={isDialogOpen}
+        setIsOpen={setIsDialogOpen}
+      />
+    </main>
   );
 }
