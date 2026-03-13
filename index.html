@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Navbar Collection</title>
-    <base href="/Modern-Navbar-Collection/">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/styles/main.css">
 </head>
 <body>
-    <header>
-        <h1>Modern Navbar Collection</h1>
-        <p>A collection of modern, responsive, and production-ready navigation bars.</p>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Modern Navbar Collection</h1>
+            <p>A curated collection of responsive, accessible, and production-ready navigation bars.</p>
+        </div>
     </header>
+
     <main>
-        <aside id="navbar-list"></aside>
-        <section id="navbar-display">
-            <iframe id="navbar-iframe"></iframe>
-        </section>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search navbars...">
+        </div>
+        <div id="navbar-grid" class="grid-container">
+            <!-- Navbar items will be dynamically inserted here -->
+        </div>
     </main>
-    <script src="script.js"></script>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="src/scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 </body>
 </html>
