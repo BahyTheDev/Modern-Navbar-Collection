@@ -12,14 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { triageItems } from "../data/triage-items";
 import TriageItemDetails from "./TriageItemDetails";
-
-interface TriageItem {
-  id: number;
-  title: string;
-  description: string;
-  priority: string;
-  source: string;
-}
+import { TriageItem } from "../types/triage";
 
 export default function Triage() {
   const [selectedItem, setSelectedItem] = useState<TriageItem | null>(null);
@@ -49,7 +42,7 @@ export default function Triage() {
               <TableCell>{item.title}</TableCell>
               <TableCell>{item.source}</TableCell>
               <TableCell>
-                <Button variant="outline" onClick={() => handleViewClick(item)}>
+                <Button variant="outline" onClick={() => handleViewClick(item as TriageItem)}>
                   View
                 </Button>
               </TableCell>

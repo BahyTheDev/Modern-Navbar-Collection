@@ -8,8 +8,15 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { TriageItem } from "../types/triage";
 
-export default function TriageItemDetails({ item, isOpen, setIsOpen }) {
+interface TriageItemDetailsProps {
+  item: TriageItem | null;
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+export default function TriageItemDetails({ item, isOpen, setIsOpen }: TriageItemDetailsProps) {
   if (!item) {
     return null;
   }
