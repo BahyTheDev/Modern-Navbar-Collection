@@ -1,0 +1,51 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+}
+
+header {
+    background: #f0f0f0;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+aside {
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+#navbar-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#navbar-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#navbar-list li:hover {
+    background: #eee;
+}
+
+#navbar-display {
+    padding: 1rem;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
