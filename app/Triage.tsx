@@ -13,11 +13,19 @@ import { Button } from "@/components/ui/button";
 import { triageItems } from "../data/triage-items";
 import TriageItemDetails from "./TriageItemDetails";
 
+interface TriageItem {
+  id: number;
+  title: string;
+  description: string;
+  priority: string;
+  source: string;
+}
+
 export default function Triage() {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState<TriageItem | null>(null);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const handleViewClick = (item) => {
+  const handleViewClick = (item: TriageItem) => {
     setSelectedItem(item);
     setIsDialogOpen(true);
   };
