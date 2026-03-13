@@ -1,0 +1,140 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+}
+
+/* Navbar Variables */
+:root {
+    --nav-bg: #ffffff;
+    --nav-text: #111827;
+    --nav-text-hover: #4f46e5;
+    --nav-border: #e5e7eb;
+    --nav-height: 70px;
+    --transition: all 0.3s ease;
+}
+
+/* Navbar Structure */
+.navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    height: var(--nav-height);
+    width: 100%;
+    position: relative;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.navbar-logo {
+    color: var(--nav-text);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+/* Desktop Menu */
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navbar-link {
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.navbar-link:hover, .navbar-link.active {
+    color: var(--nav-text-hover);
+}
+
+/* Mobile Toggle */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggle .bar {
+    height: 2px;
+    width: 100%;
+    background-color: var(--nav-text);
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+        border-bottom: 1px solid var(--nav-border);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.4s ease;
+    }
+
+    .navbar-menu.active {
+        max-height: 300px;
+    }
+
+    .navbar-link {
+        display: block;
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    .navbar-link:last-child {
+        border-bottom: none;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Hamburger Animation */
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <nav class="animated-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">Anim<span>o</span>.</a>
+            
+            <ul class="nav-links">
+                <!-- Data attribute used for hover animation -->
+                <li><a href="#" data-text="Home" class="active">Home</a></li>
+                <li><a href="#" data-text="Work">Work</a></li>
+                <li><a href="#" data-text="Services">Services</a></li>
+                <li><a href="#" data-text="Studio">Studio</a></li>
+                <li><a href="#" data-text="Contact">Contact</a></li>
+                <!-- Animated bottom line container -->
+                <div class="animation-line"></div>
+            </ul>
+
+            <button class="mobile-toggle" aria-label="Toggle Navigation">
+                <div class="hamburger-animated">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>

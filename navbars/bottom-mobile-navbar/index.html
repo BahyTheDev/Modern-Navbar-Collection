@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bottom Mobile Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+    <!-- Mobile top header for context -->
+    <header class="mobile-header">
+        <a href="#" class="logo">App.</a>
+        <div class="header-actions">
+            <button aria-label="Notifications"><ion-icon name="notifications-outline"></ion-icon></button>
+            <img src="https://ui-avatars.com/api/?name=User&background=6366f1&color=fff" alt="Profile" class="avatar">
+        </div>
+    </header>
+
+    <main class="content">
+        <h1>Bottom Fixed.</h1>
+        <p>A mobile-optimized navigation bar that sits at the bottom of the screen. This pattern is ideal for progressive web apps (PWAs) and mobile-first products, keeping primary navigation easily reachable by the thumb.</p>
+        
+        <div class="feed">
+            <div class="post"></div>
+            <div class="post"></div>
+            <div class="post"></div>
+            <div class="post"></div>
+            <div class="post"></div>
+        </div>
+        
+        <div style="height: 100px;"></div> <!-- Spacer for the bottom nav -->
+    </main>
+
+    <!-- The actual bottom navbar -->
+    <nav class="bottom-nav">
+        <!-- Magic indicator line -->
+        <div class="indicator"></div>
+        
+        <ul class="nav-links">
+            <li class="active" data-index="0">
+                <a href="#">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Home</span>
+                </a>
+            </li>
+            <li data-index="1">
+                <a href="#">
+                    <span class="icon"><ion-icon name="search-outline"></ion-icon></span>
+                    <span class="text">Search</span>
+                </a>
+            </li>
+            <!-- Center prominent button -->
+            <li class="action-btn" data-index="2">
+                <a href="#">
+                    <span class="icon"><ion-icon name="add-outline"></ion-icon></span>
+                    <span class="text">Add</span>
+                </a>
+            </li>
+            <li data-index="3">
+                <a href="#">
+                    <span class="icon"><ion-icon name="chatbubbles-outline"></ion-icon></span>
+                    <span class="text">Chat</span>
+                </a>
+            </li>
+            <li data-index="4">
+                <a href="#">
+                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                    <span class="text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

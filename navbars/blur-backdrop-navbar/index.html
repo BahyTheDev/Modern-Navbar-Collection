@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blur Backdrop Navbar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- Elaborate background to show off the blur effect -->
+    <div class="scenery">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="mesh"></div>
+    </div>
+
+    <!-- The Blur Navbar -->
+    <nav class="blur-nav" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <ion-icon name="planet-outline"></ion-icon>
+                </div>
+                Nexus
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#" class="active">Features</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="login">Log In</a>
+                <a href="#" class="btn-primary">Get Started</a>
+                <button class="mobile-toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content to scroll -->
+    <main class="content">
+        <h1>Welcome to the Future.</h1>
+        <p>Scroll down to see how the navigation bar maintains its beautiful blurred backdrop effect over complex backgrounds and text.</p>
+        <div style="height: 150vh;"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

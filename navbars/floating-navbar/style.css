@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #fafafc;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Background decorations */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    filter: blur(60px);
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background-color: #ffd166;
+    top: -100px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 300px;
+    height: 300px;
+    background-color: #ef476f;
+    bottom: 20%;
+    right: -50px;
+}
+
+.shape-3 {
+    width: 500px;
+    height: 500px;
+    background-color: #118ab2;
+    top: 40%;
+    left: 40%;
+}
+
+/* Floating Navbar Core */
+.floating-nav {
+    position: fixed;
+    bottom: 30px; /* Position at bottom for floating effect */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: auto; /* Let it size to content */
+    max-width: 90%;
+    
+    /* The pill look */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px; /* Full rounded corners */
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    padding: 0.5rem 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.floating-nav:hover {
+    box-shadow: 0 15px 50px -10px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.05);
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Logo inline with nav items */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding-right: 1.5rem;
+    border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    color: #ef476f;
+}
+
+/* Link Items */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 30px;
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a ion-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover & Active States */
+.nav-links a:hover {
+    color: #1a1a1a;
+    background-color: rgba(0,0,0,0.04);
+}
+
+.nav-links a:hover ion-icon {
+    transform: scale(1.1);
+}
+
+.nav-links a.active {
+    background-color: #118ab2;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(17, 138, 178, 0.3);
+}
+
+.nav-links a.active ion-icon {
+    color: #fff;
+}
+
+/* Content */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .floating-nav {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    .nav-container {
+        gap: 0.5rem;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo {
+        padding-right: 0.5rem;
+    }
+    
+    .logo span {
+        display: none; /* Hide text, keep icon */
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .link-text {
+        display: none; /* Hide text, show only icons on mobile */
+    }
+
+    .nav-links a {
+        padding: 0.8rem;
+        border-radius: 50%; /* Circle buttons on mobile */
+    }
+
+    .nav-links a ion-icon {
+        font-size: 1.5rem;
+    }
+    
+    .content h1 {
+        font-size: 2.5rem;
+    }
+}
